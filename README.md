@@ -1,4 +1,5 @@
 # Weatherly - Modern Weather App
+(https://github.com/Prajwal1412/weather_app/)
 
 Weatherly is a modern, responsive weather web app built with vanilla JavaScript, [WeatherAPI](https://www.weatherapi.com/), and Tailwind CSS. It provides current weather and the past 5 days' weather for any city, as well as for your current location (with permission). The UI is designed with glassmorphism, gradients, and is fully responsive for mobile, tablet (iPad), and desktop.
 
