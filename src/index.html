@@ -3,33 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <script src="index.js" defer></script>
     <title>Weather App</title>
   </head>
-  <body class="max-h-full">
+  <body
+    class="bg-gradient-to-br from-blue-100 via-yellow-100 to-blue-200 min-h-screen font-sans"
+  >
     <nav
-      id="navbar"
-      class="bg-gradient-to-br text-center from-yellow-300 to-blue-400 font-semibold text-white text-4xl"
+      class="relative z-10 bg-white/30 backdrop-blur-md border-b-4 border-gradient-to-r from-blue-400 via-yellow-300 to-pink-400 shadow-xl rounded-b-3xl mx-auto mt-2 mb-6 max-w-screen w-full px-2"
+      style="font-family: 'Poppins', sans-serif"
     >
-      Weather FTOday
-    </nav>
-    <div class="grid-cols-2 grid place-items-center h-screen">
-      <form id="weather-form" class="mb-4">
-        <input
-          type="text"
-          id="city-input"
-          placeholder="Enter city name"
-          class="w-full p-2 border border-gray-300 rounded mb-2"
-        />
-        <button
-          id="submit-btn"
-          type="submit"
-          class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200"
+      <div class="flex items-center justify-center py-4 md:py-6">
+        <span
+          class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-yellow-400 to-pink-500 bg-clip-text text-transparent tracking-wider drop-shadow-lg text-center"
         >
-          Get Weather
-        </button>
-      </form>
+          Weather For Today
+        </span>
+      </div>
+    </nav>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-[30%_70%] h-[90vh] gap-8 p-6 max-w-6xl mx-auto"
+    >
+      <!-- Left Panel -->
+      <div class="flex flex-col gap-8 justify-center">
+        <form
+          id="weather-form"
+          class="bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col gap-4 backdrop-blur-md"
+        >
+          <input
+            id="city-input"
+            type="text"
+            placeholder="Enter city name"
+            class="w-full p-3 rounded-xl border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+          />
+          <button
+            id="submit-btn"
+            class="w-full bg-gradient-to-r from-blue-500 to-yellow-400 text-white py-3 mt-2 rounded-xl font-semibold shadow hover:scale-105 transition"
+          >
+            Get Weather
+          </button>
+        </form>
+
+        <!-- Recent Searches -->
+        <select
+          id="recent-cities"
+          class="hidden w-full p-3 border rounded-xl bg-white/80 shadow focus:outline-none"
+        ></select>
+
+        <div
+          id="no-location-message"
+          class="text-red-600 hidden text-center font-medium"
+        >
+          Please enter a location or allow location access.
+        </div>
+      </div>
+
+      <!-- Right Panel (Weather Info) -->
+      <div id="weather-cards" class="flex flex-col gap-4 hidden">
+        <!-- Today -->
+        <div
+          id="today-card"
+          class="bg-white/70 rounded-2xl shadow-xl p-4 flex flex-col items-center backdrop-blur-md border border-blue-100 max-h-[320px] min-h-[220px] justify-center"
+        >
+          <span class="text-xl font-bold mb-2 text-blue-700"
+            >Today's Weather</span
+          >
+          <img id="today-icon" class="w-14 h-14 mb-2 drop-shadow" />
+          <div
+            id="today-temp"
+            class="text-2xl font-extrabold text-blue-600"
+          ></div>
+          <div id="today-condition" class="text-base text-gray-700"></div>
+          <div id="today-wind" class="text-blue-500 mt-2"></div>
+        </div>
+
+        <!-- Forecast -->
+        <div
+          id="forecast-container"
+          class="grid grid-cols-1 sm:grid-cols-4 gap-4"
+        ></div>
+      </div>
     </div>
   </body>
 </html>
