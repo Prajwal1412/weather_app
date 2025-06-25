@@ -12,23 +12,23 @@
     <title>Weather App</title>
   </head>
   <body
-    class="bg-gradient-to-br from-blue-100 via-yellow-100 to-blue-200 min-h-screen font-sans"
+    class="bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500 min-h-screen font-sans"
   >
     <nav
-      class="relative z-10 bg-white/30 backdrop-blur-md border-b-4 border-gradient-to-r from-blue-400 via-yellow-300 to-pink-400 shadow-xl rounded-b-3xl mx-auto mt-2 mb-6 max-w-screen w-full px-2"
+      class="relative z-10 bg-white/30 backdrop-blur-md border-b-4 border-gradient-to-r from-blue-400 via-yellow-300 to-pink-400 shadow-xl rounded-b-3xl mx-auto mt-2 mb-6 max-w-sc w-full px-2"
       style="font-family: 'Poppins', sans-serif"
     >
       <div class="flex items-center justify-center py-4 md:py-6">
         <span
           class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-yellow-400 to-pink-500 bg-clip-text text-transparent tracking-wider drop-shadow-lg text-center"
         >
-          Weather For Today
+          Weatherly
         </span>
       </div>
     </nav>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-[30%_70%] h-[90vh] gap-8 p-6 max-w-6xl mx-auto"
+      class="grid grid-cols-1 md:grid-cols-[30%_70%] h-[100vh] gap-8 p-6 max-w-[90%] mx-auto"
     >
       <!-- Left Panel -->
       <div class="flex flex-col gap-8 justify-center">
@@ -51,10 +51,32 @@
         </form>
 
         <!-- Recent Searches -->
-        <select
-          id="recent-cities"
-          class="hidden w-full p-3 border rounded-xl bg-white/80 shadow focus:outline-none"
-        ></select>
+        <div class="flex flex-col gap-2 mt-4">
+          <label
+            for="recent-cities"
+            class="flex items-center gap-2 font-semibold text-blue-700 text-lg"
+          >
+            <svg
+              class="w-5 h-5 text-blue-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            Your Recent Searches
+          </label>
+          <select
+            id="recent-cities"
+            class="hidden w-full p-3 border border-blue-200 rounded-xl bg-white/60 backdrop-blur-md shadow focus:outline-none transition hover:border-blue-400"
+          ></select>
+          <hr class="border-t border-blue-100 mt-2" />
+        </div>
 
         <div
           id="no-location-message"
@@ -86,7 +108,7 @@
         <!-- Forecast -->
         <div
           id="forecast-container"
-          class="grid grid-cols-1 sm:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-5 gap-4"
         ></div>
       </div>
     </div>
