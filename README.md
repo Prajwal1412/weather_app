@@ -15,11 +15,7 @@ Weatherly is a modern, responsive weather web app built with vanilla JavaScript,
 
 ---
 
-## Screenshots
 
-![Weatherly Screenshot](screenshot.png) <!-- Add your screenshot file if available -->
-
----
 
 ## Getting Started
 
