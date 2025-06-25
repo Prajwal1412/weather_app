@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
         fetchWeatherByCoords(lat, lon);
       },
       () => {
-        showError("Location permission denied.");
+        showError("Location permission denied. Please enter location.");
       }
     );
   } else {
